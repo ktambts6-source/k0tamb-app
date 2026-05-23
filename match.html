@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Р В Р’В Р РЋРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹ Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Standoff 2 k0tamb app</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/app.css">
+
+    <script src="scripts/theme.js"></script>
+
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+        body {
+
+            font-family: 'Montserrat', sans-serif;
+
+            background: linear-gradient(160deg, #080b14 0%, #0d1020 40%, #111827 100%);
+
+            color: #fff;
+
+            min-height: 100vh;
+
+        }
+
+
+
+        /* TOP NAVBAR */
+
+        .navbar {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 14px 28px;
+
+            background: rgba(10,12,22,0.95);
+
+            border-bottom: 1px solid rgba(255,107,0,0.2);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            backdrop-filter: blur(12px);
+
+        }
+
+        .navbar-brand {
+
+            font-size: 0.7rem;
+
+            font-weight: 700;
+
+            letter-spacing: .2em;
+
+            text-transform: uppercase;
+
+            color: rgba(255,107,0,0.8);
+
+        }
+
+        .navbar-links { display: flex; gap: 10px; }
+
+        .nav-btn {
+
+            background: rgba(255,107,0,0.12);
+
+            border: 1px solid rgba(255,107,0,0.3);
+
+            color: #ff6b00;
+
+            border-radius: 8px;
+
+            padding: 7px 16px;
+
+            font-size: 0.78rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            font-family: inherit;
+
+            transition: all .2s;
+
+        }
+
+        .nav-btn:hover { background: rgba(255,107,0,0.25); }
+
+
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            padding: 32px 20px 60px;
+
+        }
+
+
+
+        /* HEADER SCORE */
+
+        .match-header {
+
+            text-align: center;
+
+            margin-bottom: 36px;
+
+            padding: 36px 24px;
+
+            background: rgba(255,255,255,0.03);
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255,107,0,0.15);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        .match-header::before {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 0;
+
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,107,0,0.06) 0%, transparent 70%);
+
+            pointer-events: none;
+
+        }
+
+        .tournament-label {
+
+            font-size: 0.65rem;
+
+            letter-spacing: .25em;
+
+            text-transform: uppercase;
+
+            color: rgba(255,107,0,0.7);
+
+            margin-bottom: 10px;
+
+        }
+
+        .match-date {
+
+            font-size: 0.72rem;
+
+            color: #555;
+
+            margin-bottom: 24px;
+
+        }
+
+        .score-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 32px;
+
+            margin-bottom: 16px;
+
+        }
+
+        .team-block { flex: 1; max-width: 300px; }
+
+        .team-block.right { text-align: right; }
+
+        .team-block.left { text-align: left; }
+
+        .team-name {
+
+            font-size: clamp(1.1rem, 3vw, 1.8rem);
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: .03em;
+
+            margin-bottom: 6px;
+
+        }
+
+        .team-name.t1 { color: #ff6b00; }
+
+        .team-name.t2 { color: #4fc3f7; }
+
+        .score-block {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            flex-shrink: 0;
+
+        }
+
+        .big-score {
+
+            font-size: clamp(3rem, 8vw, 5.5rem);
+
+            font-weight: 900;
+
+            line-height: 1;
+
+        }
+
+        .big-score.t1 { color: #ff6b00; }
+
+        .big-score.t2 { color: #4fc3f7; }
+
+        .big-score.loss { opacity: 0.4; }
+
+        .score-sep { font-size: 1.5rem; color: rgba(255,255,255,0.2); }
+
+        .match-meta {
+
+            font-size: 0.72rem;
+
+            color: #666;
+
+            letter-spacing: .1em;
+
+        }
+
+
+
+        /* MVP */
+
+        .mvp-banner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            background: rgba(255,193,7,0.07);
+
+            border: 1px solid rgba(255,193,7,0.2);
+
+            border-radius: 12px;
+
+            padding: 14px 24px;
+
+            margin-bottom: 28px;
+
+        }
+
+        .mvp-avatar {
+
+            width: 44px; height: 44px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 2px solid rgba(255,193,7,0.5);
+
+        }
+
+        .mvp-label { font-size: 0.6rem; color: #ffc107; letter-spacing: .15em; text-transform: uppercase; font-weight: 700; }
+
+        .mvp-name { font-size: 1.1rem; font-weight: 900; color: #fff; }
+
+        .mvp-stats { font-size: 0.78rem; color: #aaa; }
+
+
+
+        /* MAPS TABS */
+
+        .maps-nav {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+
+        }
+
+        .map-tab {
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #888;
+
+            border-radius: 10px;
+
+            padding: 10px 18px;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 0.82rem;
+
+            font-weight: 600;
+
+            transition: all .2s;
+
+        }
+
+        .map-tab:hover { border-color: rgba(255,107,0,0.4); color: #ccc; }
+
+        .map-tab.active {
+
+            background: rgba(255,107,0,0.15);
+
+            border-color: #ff6b00;
+
+            color: #fff;
+
+        }
+
+        .map-tab .tab-score { font-size: 0.7rem; opacity: .7; margin-left: 6px; }
+
+
+
+        /* STATS TABLE */
+
+        .map-section {
+
+            background: rgba(255,255,255,0.03);
+
+            border-radius: 16px;
+
+            border: 1px solid rgba(255,255,255,0.07);
+
+            overflow: hidden;
+
+            margin-bottom: 20px;
+
+        }
+
+        .map-section-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 16px 22px;
+
+            background: rgba(255,255,255,0.03);
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+
+        }
+
+        .map-section-name { font-size: 1.1rem; font-weight: 900; color: #fff; }
+
+        .map-section-score { font-size: 1.6rem; font-weight: 900; }
+
+
+
+        .stats-table-wrap { overflow-x: auto; }
+
+        .stats-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            font-size: 0.82rem;
+
+        }
+
+        .stats-table th {
+
+            padding: 10px 14px;
+
+            text-align: left;
+
+            font-size: 0.65rem;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+            color: #555;
+
+            font-weight: 700;
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+
+            white-space: nowrap;
+
+        }
+
+        .stats-table td {
+
+            padding: 10px 14px;
+
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+
+            white-space: nowrap;
+
+        }
+
+        .stats-table tr:last-child td { border-bottom: none; }
+
+        .stats-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+
+
+        .player-cell { display: flex; align-items: center; gap: 10px; }
+
+        .player-avatar {
+
+            width: 30px; height: 30px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            flex-shrink: 0;
+
+        }
+
+        .player-nick { font-weight: 700; font-size: 0.85rem; }
+
+        .player-role { font-size: 0.65rem; color: #666; margin-top: 1px; }
+
+        .mvp-star { color: #ffc107; margin-left: 4px; }
+
+
+
+        .kd-good { color: #4bcd7b; font-weight: 700; }
+
+        .kd-ok { color: #f0c040; font-weight: 700; }
+
+        .kd-bad { color: #e05555; font-weight: 700; }
+
+        .rating-green { color: #4bcd7b; font-weight: 900; }
+
+        .rating-yellow { color: #f0c040; font-weight: 900; }
+
+        .rating-white { color: #ffffff; font-weight: 900; }
+
+        .rating-red { color: #e05555; font-weight: 900; }
+
+
+
+        .team-header-row td {
+
+            background: rgba(255,255,255,0.03);
+
+            font-size: 0.65rem;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+
+            padding: 8px 14px;
+
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+
+        }
+
+
+
+        /* ROUNDS LOG */
+
+        .rounds-section {
+
+            margin-top: 20px;
+
+        }
+
+        .rounds-toggle {
+
+            width: 100%;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #aaa;
+
+            border-radius: 10px;
+
+            padding: 12px 18px;
+
+            font-family: inherit;
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            text-align: left;
+
+            transition: all .2s;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+        .rounds-toggle:hover { border-color: rgba(255,107,0,0.3); color: #fff; }
+
+        .rounds-log {
+
+            display: none;
+
+            margin-top: 12px;
+
+            background: rgba(0,0,0,0.3);
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            padding: 16px 20px;
+
+            max-height: 400px;
+
+            overflow-y: auto;
+
+        }
+
+        .rounds-log.open { display: block; }
+
+        .round-line {
+
+            font-size: 0.78rem;
+
+            color: #888;
+
+            line-height: 1.7;
+
+            padding: 2px 0;
+
+        }
+
+        .round-line.round-header {
+
+            color: #ff6b00;
+
+            font-weight: 700;
+
+            margin-top: 8px;
+
+            font-size: 0.8rem;
+
+        }
+
+
+
+        /* NOT FOUND */
+
+        .not-found {
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            color: #555;
+
+        }
+
+        .not-found h2 { font-size: 1.5rem; margin-bottom: 12px; color: #888; }
+
+
+
+        @media (max-width: 600px) {
+
+            .score-row { gap: 16px; }
+
+            .team-block { max-width: 120px; }
+
+            .big-score { font-size: 3rem; }
+
+            .navbar { padding: 12px 16px; }
+
+            .container { padding: 20px 12px 40px; }
+
+        }
+
+    /* Р В Р’В Р В Р вЂ№Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В° match.html */
+
+    body.theme-light { background: linear-gradient(160deg,#f0f2f8 0%,#e8eaf2 40%,#eef0f8 100%) !important; color: #1a1a2e !important; }
+
+    body.theme-light .navbar { background: rgba(255,255,255,0.95) !important; border-color: rgba(255,107,0,0.15) !important; }
+
+    body.theme-light .navbar-brand { color: #ff6b00 !important; }
+
+    body.theme-light .nav-btn { color: #ff6b00 !important; border-color: rgba(255,107,0,0.3) !important; background: rgba(255,107,0,0.05) !important; }
+
+    body.theme-light .map-section { background: #fff !important; border-color: rgba(0,0,0,0.08) !important; }
+
+    body.theme-light .stats-table th { background: rgba(255,107,0,0.08) !important; color: #555 !important; border-color: rgba(0,0,0,0.08) !important; }
+
+    body.theme-light .stats-table td { border-color: rgba(0,0,0,0.06) !important; color: #333 !important; }
+
+    body.theme-light .stats-table tbody tr:hover { background: rgba(255,107,0,0.04) !important; }
+
+    body.theme-light .team-header-row td { background: rgba(255,107,0,0.06) !important; }
+
+    body.theme-light .match-header { background: rgba(255,255,255,0.9) !important; border-color: rgba(0,0,0,0.08) !important; }
+
+    body.theme-light .tournament-label, body.theme-light .match-date { color: #888 !important; }
+
+    body.theme-light .map-tab { background: #f4f5fc !important; border-color: rgba(0,0,0,0.1) !important; color: #555 !important; }
+
+    body.theme-light .map-tab.active { background: rgba(255,107,0,0.12) !important; border-color: #ff6b00 !important; color: #ff6b00 !important; }
+
+    body.theme-light .container { color: #1a1a2e; }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<nav class="navbar">
+
+    <div class="navbar-brand">Р В Р вЂ Р РЋРІвЂћСћР В Р вЂ№ k0tamb app Р В РІР‚в„ўР вЂ™Р’В· Р В Р’В Р РЋРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹</div>
+
+    <div class="navbar-links">
+
+        <a href="index.html" class="nav-btn">Р В Р вЂ Р Р†Р вЂљР’В Р РЋРІР‚в„ў Р В Р’В Р Р†Р вЂљРЎС™Р В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ</a>
+
+        <a href="admin.html" class="nav-btn">Р В Р’В Р РЋРІР‚в„ўР В Р’В Р СћРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°</a>
+
+        <button class="theme-toggle-btn" type="button">Р В Р вЂ Р С—РЎвЂ”Р вЂ¦Р В РІР‚С™Р В РЎвЂ”Р РЋРІР‚пїЅР В Р РЏ Р В Р’В Р В Р вЂ№Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ</button>
+
+    </div>
+
+</nav>
+
+
+
+<div class="container" id="matchContainer">
+
+    <div class="not-found">
+
+        <h2>Р В Р вЂ Р В Р РЏР РЋРІР‚вЂњ Р В Р’В Р Р†Р вЂљРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р’В Р вЂ™Р’В·Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°...</h2>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    // Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р… ID Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В· URL
+
+    const params = new URLSearchParams(location.search);
+
+    const matchId = parseInt(params.get('id'));
+
+
+
+    function escHtml(str) {
+
+        if (!str) return '';
+
+        return String(str)
+
+            .replace(/&/g,'&amp;')
+
+            .replace(/</g,'&lt;')
+
+            .replace(/>/g,'&gt;')
+
+            .replace(/"/g,'&quot;');
+
+    }
+
+
+
+    function kdClass(kd) {
+
+        return kd >= 1.2 ? 'kd-good' : kd >= 0.9 ? 'kd-ok' : 'kd-bad';
+
+    }
+
+    function ratingClass(r) {
+
+        return r >= 1.10 ? 'rating-green' : r >= 1.05 ? 'rating-yellow' : r >= 1.00 ? 'rating-white' : 'rating-red';
+
+    }
+
+
+
+    function renderPlayerRow(p, accentColor, isMvp) {
+
+        const kd = p.deaths > 0 ? (p.kills / p.deaths) : p.kills;
+
+        const kdStr = typeof kd.toFixed === 'function' ? kd.toFixed(2) : String(kd);
+
+        // hltvRating Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р’В Р РЋРІР‚СћР В Р Р‹Р В РЎвЂњР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’Вµ Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’Вµ, fallback Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В° Р В Р’В Р СћРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’Вµ Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“
+
+        const ratingRaw = p.hltvRating || p.kd_rating || p.rating_per_match || (p.ratingSum && p.matches ? p.ratingSum/p.matches : null);
+
+        const ratingVal = parseFloat(ratingRaw);
+
+        const ratingStr = (!isNaN(ratingVal) && ratingVal > 0) ? ratingVal.toFixed(2) : 'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ';
+
+        const kprRaw = p.kpr != null ? parseFloat(p.kpr) : (p.totalRounds > 0 ? p.kills/p.totalRounds : null);
+
+        const kpr = (kprRaw != null && !isNaN(kprRaw)) ? kprRaw.toFixed(2) : 'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ';
+
+        const dprRaw = p.dpr != null ? parseFloat(p.dpr) : (p.totalRounds > 0 ? p.deaths/p.totalRounds : null);
+
+        const dpr = (dprRaw != null && !isNaN(dprRaw)) ? dprRaw.toFixed(2) : 'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ';
+
+        const adrRaw = p.adr != null ? parseFloat(p.adr) : null;
+
+        const adr = (adrRaw != null && !isNaN(adrRaw)) ? adrRaw.toFixed(0) : 'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ';
+
+
+
+        // Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В·Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р вЂ°Р В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚Сћ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р В РІР‚В  CS2 Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР’В¦
+
+        const isCS2Match = false; // match.html Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В¶Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В° Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р’В Р В РІР‚В Р В Р Р‹Р В РЎвЂњР В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРІР‚вЂњР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В·Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р… Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ
+
+
+
+        return `<tr>
+
+            <td>
+
+                <div class="player-cell">
+
+                    <img class="player-avatar" src="players/${escHtml(p.nickname)}.png"
+
+                        onerror="this.onerror=null;this.src='players/defaultplayer.png';"
+
+                        style="border: 2px solid ${accentColor}40;">
+
+                    <div>
+
+                        <div class="player-nick">${escHtml(p.nickname)}${isMvp ? '<span class="mvp-star">Р В Р вЂ Р вЂ™Р’В­Р РЋРІР‚в„ў</span>' : ''}</div>
+
+                        <div class="player-role">${escHtml(p.role || '')}</div>
+
+                    </div>
+
+                </div>
+
+            </td>
+
+            <td>${p.kills != null ? p.kills : 0}</td>
+
+            <td>${p.assists != null ? p.assists : 0}</td>
+
+            <td>${p.deaths != null ? p.deaths : 0}</td>
+
+            <td class="${kdClass(parseFloat(kdStr) || 0)}">${kdStr}</td>
+
+            <td>${kpr}</td>
+
+            <td>${dpr}</td>
+
+            <td>${adr}</td>
+
+            <td class="${ratingClass(parseFloat(ratingStr) || 0)}">${ratingStr}</td>
+
+        </tr>`;
+
+    }
+
+
+
+    function renderMapStats(map, t1Name, t2Name) {
+
+        const t1Wins = (map.team1Score || 0) > (map.team2Score || 0);
+
+        const t2Wins = (map.team2Score || 0) > (map.team1Score || 0);
+
+        const mvpNick = map.mvp ? map.mvp.nickname : null;
+
+
+
+        const t1Players = map.team1Stats || [];
+
+        const t2Players = map.team2Stats || [];
+
+
+
+        const rows1 = t1Players.sort((a,b)=>b.kills-a.kills)
+
+            .map(p => renderPlayerRow(p, '#ff6b00', p.nickname === mvpNick)).join('');
+
+        const rows2 = t2Players.sort((a,b)=>b.kills-a.kills)
+
+            .map(p => renderPlayerRow(p, '#4fc3f7', p.nickname === mvpNick)).join('');
+
+
+
+        const mapLogId = 'log_' + (map.mapName || '').replace(/\s/g,'_');
+
+
+
+        const comments = map.roundComments || [];
+
+        const commentsHtml = comments.length > 0
+
+            ? comments.map(line => {
+
+                const isHeader = /^Р В Р’В Р вЂ™Р’В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р РЋРІР‚СљР В Р’В Р В РІР‚В¦Р В Р’В Р СћРІР‚пїЅ\s+\d+/.test(line.trim());
+
+                return `<div class="round-line ${isHeader ? 'round-header' : ''}">${escHtml(line)}</div>`;
+
+              }).join('')
+
+            : '<div class="round-line">Р В Р’В Р РЋРІвЂћСћР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚пїЅ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р СћРІР‚пїЅР В Р’В Р РЋРІР‚СћР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРІР‚СљР В Р’В Р РЋРІР‚вЂќР В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“</div>';
+
+
+
+        return `
+
+        <div class="map-section">
+
+            <div class="map-section-header">
+
+                <div>
+
+                    <div style="font-size:0.6rem;color:#ff6b00;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px;">Р В Р’В Р РЋРІвЂћСћР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°</div>
+
+                    <div class="map-section-name">${escHtml(map.mapName || 'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ')}</div>
+
+                    ${mvpNick ? `<div style="font-size:0.72rem;color:#ffc107;margin-top:4px;">Р В Р вЂ Р вЂ™Р’В­Р РЋРІР‚в„ў MVP: ${escHtml(mvpNick)}</div>` : ''}
+
+                </div>
+
+                <div class="map-section-score">
+
+                    <span style="color:${t1Wins?'#ff6b00':'rgba(255,255,255,0.4)'}">${map.team1Score||0}</span>
+
+                    <span style="color:rgba(255,255,255,0.2);font-size:1rem;margin:0 8px;">:</span>
+
+                    <span style="color:${t2Wins?'#4fc3f7':'rgba(255,255,255,0.4)'}">${map.team2Score||0}</span>
+
+                </div>
+
+            </div>
+
+            <div class="stats-table-wrap">
+
+                <table class="stats-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚Сњ</th>
+
+                            <th>K</th><th>A</th><th>D</th>
+
+                            <th>K/D</th><th>KPR</th><th>DPR</th><th>ADR</th><th>Rating</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="team-header-row">
+
+                            <td colspan="9" style="color:#ff6b00;">${escHtml(t1Name)}</td>
+
+                        </tr>
+
+                        ${rows1}
+
+                        <tr class="team-header-row">
+
+                            <td colspan="9" style="color:#4fc3f7;">${escHtml(t2Name)}</td>
+
+                        </tr>
+
+                        ${rows2}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="rounds-section" style="padding: 14px 18px;">
+
+                <button class="rounds-toggle" onclick="
+
+                    var log = document.getElementById('${mapLogId}');
+
+                    var isOpen = log.classList.toggle('open');
+
+                    this.querySelector('.toggle-arrow').textContent = isOpen ? 'Р В Р вЂ Р Р†Р вЂљРІР‚СљР В РІР‚В ' : 'Р В Р вЂ Р Р†Р вЂљРІР‚СљР РЋРїС—Р…';
+
+                ">
+
+                    <span>Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎС™Р Р†Р вЂљРІвЂћвЂ“ Р В Р’В Р вЂ™Р’В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р РЋРІР‚СљР В Р’В Р В РІР‚В¦Р В Р’В Р СћРІР‚пїЅР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“ Р В Р’В Р РЋРІР‚пїЅ Р В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚пїЅ</span>
+
+                    <span class="toggle-arrow">Р В Р вЂ Р Р†Р вЂљРІР‚СљР РЋРїС—Р…</span>
+
+                </button>
+
+                <div class="rounds-log" id="${mapLogId}">
+
+                    ${commentsHtml}
+
+                </div>
+
+            </div>
+
+        </div>`;
+
+    }
+
+
+
+    function renderMatch(m) {
+
+        const container = document.getElementById('matchContainer');
+
+        if (!m) {
+
+            container.innerHTML = `<div class="not-found">
+
+                <h2>Р РЋР вЂљР РЋРЎСџР С—РЎвЂ”Р вЂ¦Р Р†Р вЂљРЎСљ Р В Р’В Р РЋРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦</h2>
+
+                <p style="margin-top:12px;">Р В Р’В Р Р†Р вЂљРІвЂћСћР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В·Р В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В¶Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚Сћ, Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В Р РЏ Р В Р’В Р вЂ™Р’В±Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљР’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚пїЅ ID Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р Р†РІР‚С›РІР‚вЂњ.</p>
+
+                <a href="admin.html" style="display:inline-block;margin-top:20px;color:#ff6b00;">Р В Р вЂ Р Р†Р вЂљР’В Р РЋРІР‚в„ў Р В Р’В Р Р†Р вЂљРІвЂћСћР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В¦Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ°Р В Р Р‹Р В РЎвЂњР В Р Р‹Р В Р РЏ Р В Р’В Р В РІР‚В  Р В Р’В Р вЂ™Р’В°Р В Р’В Р СћРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ</a>
+
+            </div>`;
+
+            return;
+
+        }
+
+
+
+        document.title = `${m.team1Name} vs ${m.team2Name} Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ k0tamb`;
+
+
+
+        const t1Wins = m.team1Score > m.team2Score;
+
+        const t2Wins = m.team2Score > m.team1Score;
+
+        const date = new Date(m.date).toLocaleString('ru-RU');
+
+
+
+        // Map tabs (if multiple maps)
+
+        const maps = m.maps || [];
+
+        const mapTabsHtml = maps.length > 1 ? maps.map((mp, i) => {
+
+            const tw = (mp.team1Score||0) > (mp.team2Score||0);
+
+            const col = tw ? '#ff6b00' : '#4fc3f7';
+
+            return `<button class="map-tab ${i===0?'active':''}" onclick="showMap(${i}, this)"
+
+                style="${i===0?`border-color:#ff6b00;color:#fff;background:rgba(255,107,0,0.15)`:''}"
+
+            >${escHtml(mp.mapName||'Р В Р’В Р РЋРІвЂћСћР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В° '+(i+1))}<span class="tab-score" style="color:${col}">${mp.team1Score}:${mp.team2Score}</span></button>`;
+
+        }).join('') : '';
+
+
+
+        const mapsHtml = maps.map((mp, i) =>
+
+            `<div class="map-view" id="map_${i}" style="${i>0?'display:none':''}">
+
+                ${renderMapStats(mp, m.team1Name, m.team2Name)}
+
+            </div>`
+
+        ).join('');
+
+
+
+        // Overall stats (across all maps)
+
+        const t1Overall = m.team1Stats || [];
+
+        const t2Overall = m.team2Stats || [];
+
+        const mvpNick = m.mvp ? m.mvp.nickname : null;
+
+        const overallHtml = (t1Overall.length + t2Overall.length > 0) ? `
+
+        <div style="margin-top:28px;">
+
+            <div style="font-size:0.65rem;letter-spacing:.2em;text-transform:uppercase;color:#ff6b00;font-weight:700;margin-bottom:12px;">Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎС™Р В РІР‚В° Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° Р В Р Р‹Р В РЎвЂњР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚пїЅ</div>
+
+            <div class="map-section">
+
+                <div class="stats-table-wrap">
+
+                    <table class="stats-table">
+
+                        <thead>
+
+                            <tr><th>Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚Сњ</th><th>K</th><th>A</th><th>D</th><th>K/D</th><th>KPR</th><th>DPR</th><th>ADR</th><th>Rating</th></tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr class="team-header-row"><td colspan="9" style="color:#ff6b00;">${escHtml(m.team1Name)}</td></tr>
+
+                            ${t1Overall.sort((a,b)=>b.kills-a.kills).map(p=>renderPlayerRow(p,'#ff6b00',p.nickname===mvpNick)).join('')}
+
+                            <tr class="team-header-row"><td colspan="9" style="color:#4fc3f7;">${escHtml(m.team2Name)}</td></tr>
+
+                            ${t2Overall.sort((a,b)=>b.kills-a.kills).map(p=>renderPlayerRow(p,'#4fc3f7',p.nickname===mvpNick)).join('')}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>` : '';
+
+
+
+        container.innerHTML = `
+
+        <!-- Score header -->
+
+        <div class="match-header">
+
+            <div class="tournament-label">Р РЋР вЂљР РЋРЎСџР В Р РЏР Р†Р вЂљР’В  ${escHtml(m.tournamentName || 'Р В Р’В Р РЋРЎвЂєР В Р Р‹Р РЋРІР‚СљР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™')} Р В РІР‚в„ўР вЂ™Р’В· ${escHtml(m.format||'')} Р В РІР‚в„ўР вЂ™Р’В· BO${m.bo||1}</div>
+
+            <div class="match-date">${date}</div>
+
+            <div class="score-row">
+
+                <div class="team-block left">
+
+                    <div class="team-name t1">${escHtml(m.team1Name)}</div>
+
+                    ${t1Wins ? '<div style="font-size:0.65rem;color:#4bcd7b;letter-spacing:.1em;font-weight:700;">Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚С”Р В Р’В Р Р†Р вЂљРїС—Р…Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†Р вЂљРЎСљР В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРЎвЂєР В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†Р вЂљРЎвЂќР В Р’В Р вЂ™Р’В¬</div>' : ''}
+
+                </div>
+
+                <div class="score-block">
+
+                    <span class="big-score t1 ${!t1Wins?'loss':''}">${m.team1Score}</span>
+
+                    <span class="score-sep">:</span>
+
+                    <span class="big-score t2 ${!t2Wins?'loss':''}">${m.team2Score}</span>
+
+                </div>
+
+                <div class="team-block right">
+
+                    <div class="team-name t2">${escHtml(m.team2Name)}</div>
+
+                    ${t2Wins ? '<div style="font-size:0.65rem;color:#4bcd7b;letter-spacing:.1em;font-weight:700;text-align:right;">Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚С”Р В Р’В Р Р†Р вЂљРїС—Р…Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†Р вЂљРЎСљР В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРЎвЂєР В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†Р вЂљРЎвЂќР В Р’В Р вЂ™Р’В¬</div>' : ''}
+
+                </div>
+
+            </div>
+
+            <div class="match-meta">
+
+                ${maps.map(mp => `${escHtml(mp.mapName||'?')} ${mp.team1Score}:${mp.team2Score}`).join(' &nbsp;Р В РІР‚в„ўР вЂ™Р’В·&nbsp; ')}
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MVP -->
+
+        ${m.mvp ? `<div class="mvp-banner">
+
+            <img class="mvp-avatar" src="players/${escHtml(m.mvp.nickname)}.png"
+
+                onerror="this.onerror=null;this.src='players/defaultplayer.png';">
+
+            <div>
+
+                <div class="mvp-label">Р РЋР вЂљР РЋРЎСџР В Р РЏР Р†Р вЂљР’В  MVP Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°</div>
+
+                <div class="mvp-name">${escHtml(m.mvp.nickname)}</div>
+
+                <div class="mvp-stats">${m.mvp.kills||0}/${m.mvp.deaths||0} Р В Р Р‹Р РЋРІР‚СљР В Р’В Р вЂ™Р’В±Р В Р’В Р РЋРІР‚пїЅР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р В РІР‚В  Р В РІР‚в„ўР вЂ™Р’В· K/D ${m.mvp.kd||'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ'}</div>
+
+            </div>
+
+        </div>` : ''}
+
+
+
+        <!-- Maps -->
+
+        ${maps.length > 1 ? `<div class="maps-nav">${mapTabsHtml}</div>` : ''}
+
+        ${mapsHtml}
+
+
+
+        ${overallHtml}
+
+        `;
+
+    }
+
+
+
+    // Tab switching
+
+    window.showMap = function(idx, btn) {
+
+        document.querySelectorAll('.map-view').forEach((el, i) => {
+
+            el.style.display = i === idx ? '' : 'none';
+
+        });
+
+        document.querySelectorAll('.map-tab').forEach(t => {
+
+            t.classList.remove('active');
+
+            t.style.background = '';
+
+            t.style.borderColor = '';
+
+            t.style.color = '';
+
+        });
+
+        if (btn) {
+
+            btn.classList.add('active');
+
+            btn.style.background = 'rgba(255,107,0,0.15)';
+
+            btn.style.borderColor = '#ff6b00';
+
+            btn.style.color = '#fff';
+
+        }
+
+    };
+
+
+
+    // Load match from localStorage
+
+    function loadMatch() {
+
+        try {
+
+            const history = JSON.parse(localStorage.getItem('matchHistory') || '[]');
+
+            const match = history.find(m => m.id === matchId);
+
+            // Р В Р’В Р РЋРІР‚С”Р В Р’В Р вЂ™Р’В±Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р РЏР В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р… Р В Р’В Р вЂ™Р’В·Р В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚Сњ Р В Р’В Р В РІР‚В Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р’В Р СћРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚пїЅ Р В Р Р‹Р В РЎвЂњ Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРїС—Р… Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В¶Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°
+
+            if (match) {
+
+                const modeLbl = match.gameMode === 'cs2' ? 'CS2' : 'Standoff 2';
+
+                document.querySelector('.navbar-brand').textContent = modeLbl + ' k0tamb app';
+
+            }
+
+            renderMatch(match || null);
+
+        } catch(e) {
+
+            document.getElementById('matchContainer').innerHTML =
+
+                `<div class="not-found"><h2>Р В Р’В Р РЋРІР‚С”Р В Р Р‹Р Р†РІР‚С™Р’В¬Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В±Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° Р В Р’В Р вЂ™Р’В·Р В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р’В Р вЂ™Р’В·Р В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚пїЅ</h2><p>${e.message}</p></div>`;
+
+        }
+
+    }
+
+
+
+    if (!matchId) {
+
+        document.getElementById('matchContainer').innerHTML = `
+
+            <div class="not-found">
+
+                <h2>Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎСљР Р†Р вЂљРІР‚Сњ ID Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В° Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р Р‹Р РЋРІР‚СљР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В·Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦</h2>
+
+                <p>Р В Р’В Р РЋРІР‚С”Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р Р‹Р В Р Р‰Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р РЋРІР‚Сљ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљР’В Р В Р Р‹Р РЋРІР‚Сљ Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В· <a href="admin.html" style="color:#ff6b00;">Р В Р’В Р вЂ™Р’В°Р В Р’В Р СћРІР‚пїЅР В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚пїЅ</a>.</p>
+
+            </div>`;
+
+    } else {
+
+        loadMatch();
+
+    }
+
+</script>
+
+</body>
+
+</html>
+

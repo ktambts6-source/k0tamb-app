@@ -1,0 +1,6 @@
+{
+  "name": "Standoff 2 k0tamb app",
+  "description": "Premium Standoff 2 tactical team manager and betting dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

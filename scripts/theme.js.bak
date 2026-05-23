@@ -1,0 +1,55 @@
+function getStoredTheme() {
+    return localStorage.getItem('pageTheme') || 'dark';
+}
+
+function applyPageTheme() {
+    var theme = getStoredTheme();
+    if (theme === 'light') {
+        document.body.classList.add('theme-light');
+    } else {
+        document.body.classList.remove('theme-light');
+    }
+    var btn = document.querySelector('.theme-toggle-btn');
+    if (btn) {
+        btn.textContent = theme === 'light' ? 'рџЊ™ РўС‘РјРЅР°СЏ' : 'в�ЂпёЏ РЎРІРµС‚Р»Р°СЏ';
+    }
+}
+
+function togglePageTheme() {
+    var current = getStoredTheme();
+    var next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('pageTheme', next);
+    applyPageTheme();
+}
+
+// safeStorage wrapper for localStorage fallback (РґР»СЏ СЃС‚Р°СЂС‹С… Р±СЂР°СѓР·РµСЂРѕРІ)
+function getSafeStorage() {
+    if (typeof window.safeStorage !== 'undefined') return window.safeStorage;
+    try {
+        localStorage.setItem('__storage_test__', '1');
+        localStorage.removeItem('__storage_test__');
+        return localStorage;
+    } catch (e) {
+        var memoryData = {};
+        return {
+            getItem: function(key) { return memoryData.hasOwnProperty(key) ? memoryData[key] : null; },
+            setItem: function(key, value) { memoryData[key] = String(value); },
+            removeItem: function(key) { delete memoryData[key]; },
+            clear: function() { memoryData = {}; }
+        };
+    }
+}
+
+function initThemeControls() {
+    applyPageTheme();
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.querySelector('.theme-toggle-btn');
+        if (btn) btn.addEventListener('click', togglePageTheme);
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeControls);
+} else {
+    initThemeControls();
+}

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Р В Р’В Р РЋРЎСџР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎвЂєР В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р вЂ° Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ k0tamb app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Montserrat',sans-serif;background:#0b0d14;color:#fff;min-height:100vh;}
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ NAVBAR Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .navbar{display:flex;align-items:center;justify-content:space-between;padding:13px 28px;background:rgba(8,10,18,0.97);border-bottom:1px solid rgba(255,107,0,0.18);position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);}
+        .nb-brand{font-size:0.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,107,0,0.75);}
+        .nb-links{display:flex;gap:8px;align-items:center;}
+        .nb-btn{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.28);color:#ff6b00;border-radius:7px;padding:6px 15px;font-size:0.76rem;font-weight:600;cursor:pointer;text-decoration:none;font-family:inherit;transition:.2s;}
+        .nb-btn:hover{background:rgba(255,107,0,0.22);}
+        .nb-dl{background:rgba(75,205,123,0.12);border:1px solid rgba(75,205,123,0.35);color:#4bcd7b;border-radius:7px;padding:6px 14px;font-size:0.76rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.2s;}
+        .nb-dl:hover{background:rgba(75,205,123,0.22);}
+        .nb-theme{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.13);color:#aaa;border-radius:7px;padding:6px 12px;cursor:pointer;font-size:0.76rem;font-family:inherit;}
+
+        .page-wrap{max-width:1000px;margin:0 auto;padding-bottom:60px;}
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ NOT FOUND Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .not-found{text-align:center;padding:80px 20px;margin:40px 20px;background:rgba(255,255,255,0.03);border-radius:16px;border:1px solid rgba(255,255,255,0.07);}
+        .not-found .ico{font-size:3rem;margin-bottom:14px;}
+        .not-found h2{font-size:1.2rem;color:#ff6b00;margin-bottom:10px;}
+        .not-found p{color:#555;font-size:0.86rem;line-height:1.7;max-width:420px;margin:0 auto;}
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў
+           HLTV CARD  (Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ Р В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В Р РЏ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р РЏ)
+        Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў */
+        #hltv-card{
+            position:relative;overflow:hidden;
+            background:linear-gradient(135deg,#1a1e2e 0%,#141828 50%,#111624 100%);
+            border:1px solid rgba(255,255,255,0.07);
+            display:flex;
+            min-height:200px;
+            user-select:none;
+        }
+
+        /* blur bg photo */
+        #card-bg{
+            position:absolute;inset:0;
+            background-size:cover;background-position:center top;
+            filter:blur(40px) saturate(0.3) brightness(0.18);
+            transform:scale(1.3);
+            pointer-events:none;z-index:0;
+        }
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ LEFT: photo + name Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .card-left{
+            position:relative;z-index:1;
+            flex-shrink:0;width:230px;
+            display:flex;flex-direction:column;
+            background:linear-gradient(135deg,rgba(255,107,0,0.06),transparent);
+        }
+        .card-photo-wrap{
+            flex:1;display:flex;align-items:flex-end;
+            overflow:hidden;position:relative;
+        }
+        .card-photo{
+            width:100%;height:220px;
+            object-fit:cover;object-position:center 15%;
+            display:block;
+        }
+        .card-photo-placeholder{
+            width:100%;height:220px;
+            display:flex;align-items:center;justify-content:center;
+            font-size:5rem;color:rgba(255,255,255,0.07);
+            background:rgba(255,255,255,0.02);
+        }
+        /* gradient overlay on photo */
+        .card-photo-overlay{
+            position:absolute;inset:0;
+            background:linear-gradient(to top, rgba(20,24,40,0.7) 0%, rgba(20,24,40,0.35) 40%, transparent 100%);
+        }
+        /* name below photo */
+        .card-name-block{
+            position:absolute;bottom:0;left:0;right:0;
+            padding:14px 16px 16px;
+            z-index:2;
+        }
+        .card-nick{
+            font-size:1.55rem;font-weight:900;color:#ffffff!important;
+            line-height:1;margin-bottom:4px;
+            text-shadow:0 1px 12px rgba(0,0,0,1), 0 2px 4px rgba(0,0,0,0.9);
+        }
+        .card-fullname{
+            font-size:0.7rem;color:rgba(255,255,255,0.45);
+            font-weight:500;line-height:1.3;
+        }
+        .card-fullname span{color:rgba(255,255,255,0.3);}
+        /* orange accent bar top-left */
+        .card-accent-bar{
+            position:absolute;top:0;left:0;width:3px;height:100%;
+            background:linear-gradient(180deg,#ff6b00,transparent);
+        }
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ RIGHT: stats Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .card-right{
+            position:relative;z-index:1;
+            flex:1;display:flex;flex-direction:column;
+            padding:0;
+        }
+
+        /* top info row */
+        .card-top-info{
+            display:flex;align-items:center;justify-content:flex-end;
+            padding:10px 18px 0;
+            font-size:0.62rem;color:rgba(255,255,255,0.28);font-weight:600;
+            letter-spacing:.08em;gap:14px;
+        }
+        .card-maps-count{text-transform:uppercase;letter-spacing:.1em;}
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ RATING ROW (Р В Р Р‹Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™) Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .card-rating-row{
+            display:flex;align-items:center;justify-content:center;
+            gap:0;padding:12px 24px 8px;flex:1;
+        }
+
+        /* T-rating (left) */
+        .r-side{flex:1;display:flex;flex-direction:column;align-items:center;}
+        .r-side-val{font-size:1.8rem;font-weight:900;line-height:1;}
+        .r-side-lbl{font-size:0.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-top:4px;color:rgba(255,255,255,0.3);}
+
+        /* center big rating */
+        .r-center{
+            flex:0 0 140px;display:flex;flex-direction:column;align-items:center;
+            position:relative;
+        }
+        .r-center-ring{
+            width:100px;height:100px;position:relative;
+            display:flex;align-items:center;justify-content:center;
+        }
+        .r-ring-svg{position:absolute;top:0;left:0;width:100%;height:100%;}
+        .r-center-inner{text-align:center;position:relative;z-index:1;}
+        .r-center-label{
+            font-size:0.6rem;font-weight:700;letter-spacing:.14em;
+            text-transform:uppercase;margin-bottom:1px;
+        }
+        .r-center-val{
+            font-size:2rem;font-weight:900;line-height:1;color:#fff;
+        }
+        .r-center-sublbl{
+            font-size:0.55rem;color:rgba(255,255,255,0.28);
+            font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+            margin-top:4px;
+        }
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ METRICS GRID (bottom) Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™ horizontal bars Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .card-metrics{
+            display:flex;flex-direction:column;
+            border-top:1px solid rgba(255,255,255,0.06);
+        }
+        .metric-cell{
+            display:flex;align-items:center;gap:12px;
+            padding:14px 16px;
+            border-bottom:1px solid rgba(255,255,255,0.04);
+            position:relative;
+        }
+        .metric-cell:last-child{border-bottom:none;}
+        .metric-lbl{
+            font-size:0.65rem;font-weight:700;letter-spacing:.08em;
+            text-transform:uppercase;color:rgba(255,255,255,0.5);
+            min-width:80px;flex-shrink:0;
+        }
+        .metric-bar-wrap{
+            flex:1;display:flex;align-items:center;gap:8px;
+        }
+        .metric-bar-track{
+            flex:1;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;
+        }
+        .metric-bar-fill{
+            height:100%;border-radius:3px;transition:width .5s ease;
+        }
+        .metric-val{
+            font-size:1rem;font-weight:900;color:#fff;line-height:1;
+            min-width:48px;text-align:right;
+        }
+        .metric-grade{
+            display:none;
+        }
+
+        /* grade colors */
+        .gr-great  {color:#4bcd7b;background:rgba(75,205,123,0.15);}
+        .gr-good   {color:#8bc34a;background:rgba(139,195,74,0.15);}
+        .gr-okay   {color:#e8c840;background:rgba(232,200,64,0.15);}
+        .gr-below  {color:#ff9800;background:rgba(255,152,0,0.15);}
+        .gr-poor   {color:#ef5350;background:rgba(239,83,80,0.15);}
+        .bar-great {background:#4bcd7b;}
+        .bar-good  {background:#8bc34a;}
+        .bar-okay  {background:#e8c840;}
+        .bar-below {background:#ff9800;}
+        .bar-poor  {background:#ef5350;}
+
+        /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ SECTIONS BELOW CARD Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+        .content{padding:20px 0 0;}
+        .section{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.055);border-radius:10px;padding:20px;margin-bottom:14px;}
+        .sec-title{font-size:0.65rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:rgba(255,107,0,0.7);margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid rgba(255,107,0,0.1);}
+
+        .map-row{display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+        .map-row:last-child{border-bottom:none;}
+        .map-lbl{width:80px;font-size:0.79rem;font-weight:700;flex-shrink:0;}
+        .map-bar-w{flex:1;}
+        .map-track{height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;}
+        .map-fill{height:100%;border-radius:3px;transition:width .5s;}
+        .map-sub{display:flex;justify-content:space-between;font-size:0.63rem;color:#333;margin-top:3px;}
+        .map-pct{font-size:0.77rem;font-weight:700;min-width:36px;text-align:right;}
+
+        .match-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.015);margin-bottom:5px;text-decoration:none;color:inherit;transition:.18s;}
+        .match-row:hover{background:rgba(255,107,0,0.06);border-color:rgba(255,107,0,0.18);}
+        .m-badge{font-size:0.59rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;flex-shrink:0;text-transform:uppercase;}
+        .m-win{background:rgba(75,205,123,0.14);color:#4bcd7b;}
+        .m-loss{background:rgba(239,83,80,0.14);color:#ef5350;}
+        .m-draw{background:rgba(255,255,255,0.07);color:#666;}
+        .m-info{flex:1;min-width:0;}
+        .m-title{font-size:0.79rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .m-sub{font-size:0.63rem;color:#333;margin-top:1px;}
+        .m-kd{font-size:0.84rem;font-weight:900;min-width:50px;text-align:right;}
+        .m-rt{font-size:0.72rem;min-width:40px;text-align:right;color:#555;}
+        .m-date{font-size:0.61rem;color:#2a2a3a;min-width:46px;text-align:right;}
+
+        .opp-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+        .opp-row:last-child{border-bottom:none;}
+        .opp-av{width:26px;height:26px;border-radius:50%;object-fit:cover;flex-shrink:0;background:rgba(255,255,255,0.05);}
+        .opp-nm{flex:1;font-size:0.79rem;font-weight:600;}
+        .opp-info{font-size:0.67rem;color:#333;}
+
+        /* download hint */
+        .dl-hint{text-align:center;padding:8px;font-size:0.7rem;color:#444;margin-bottom:12px;}
+
+        /* LIGHT THEME */
+        body.theme-light{background:#edf0f7!important;color:#1a1a2e!important;}
+        body.theme-light .navbar{background:rgba(255,255,255,0.97)!important;border-color:rgba(255,107,0,0.14)!important;}
+        body.theme-light #hltv-card{background:linear-gradient(135deg,#e4e8f4,#dde2f0)!important;border-color:rgba(0,0,0,0.08)!important;}
+        body.theme-light .card-nick{color:#ffffff!important;}
+        body.theme-light .section{background:#fff!important;border-color:rgba(0,0,0,0.07)!important;}
+        body.theme-light .map-track{background:rgba(0,0,0,0.06)!important;}
+        body.theme-light .map-sub,.opp-info{color:#bbb!important;}
+        body.theme-light .match-row{background:#f5f7fc!important;border-color:rgba(0,0,0,0.06)!important;}
+        body.theme-light .m-sub,.m-date,.m-rt{color:#aaa!important;}
+        body.theme-light .card-metrics{border-color:rgba(0,0,0,0.06)!important;}
+        body.theme-light .metric-cell{border-color:rgba(0,0,0,0.05)!important;}
+        body.theme-light .metric-lbl,.r-side-lbl,.r-center-sublbl,.card-top-info{color:rgba(0,0,0,0.3)!important;}
+        body.theme-light .card-fullname{color:rgba(0,0,0,0.35)!important;}
+
+        @media(max-width:640px){
+            .navbar{padding:11px 14px;}
+            .card-left{width:160px;}
+            .card-photo,.card-photo-placeholder{height:170px;}
+            .metric-val{font-size:1.1rem;}
+            .r-center-val{font-size:1.6rem;}
+            .r-side-val{font-size:1.4rem;}
+            .m-date,.m-rt{display:none;}
+        }
+    </style>
+</head>
+<body>
+<script>(function(){var t=localStorage.getItem('pageTheme')||'dark';if(t==='light')document.body.classList.add('theme-light');})();</script>
+
+<nav class="navbar">
+    <div class="nb-brand">Р В Р вЂ Р РЋРІвЂћСћР В Р вЂ№ k0tamb Р В РІР‚в„ўР вЂ™Р’В· Р В Р’В Р РЋРЎСџР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎвЂєР В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°</div>
+    <div class="nb-links">
+        <a href="index.html" class="nb-btn">Р В Р вЂ Р Р†Р вЂљР’В Р РЋРІР‚в„ў Р В Р’В Р Р†Р вЂљРЎС™Р В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ</a>
+        <button class="nb-dl" id="dlBtn">Р В Р вЂ Р вЂ™Р’В¬Р Р†Р вЂљР Р‹ Р В Р’В Р В Р вЂ№Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ</button>
+        <button class="nb-theme" onclick="(function(){var t=localStorage.getItem('pageTheme')||'dark';var n=t==='dark'?'light':'dark';localStorage.setItem('pageTheme',n);document.body.classList.toggle('theme-light',n==='light');})()">Р В Р вЂ Р С—РЎвЂ”Р вЂ¦Р В РІР‚С™Р В РЎвЂ”Р РЋРІР‚пїЅР В Р РЏ/Р РЋР вЂљР РЋРЎСџР В Р вЂ°Р Р†РІР‚С›РЎС›</button>
+    </div>
+</nav>
+
+<div class="page-wrap">
+    <div id="root">
+        <div class="not-found" style="margin-top:40px;"><div class="ico">Р В Р вЂ Р В Р РЏР РЋРІР‚вЂњ</div><h2>Р В Р’В Р Р†Р вЂљРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р’В Р вЂ™Р’В·Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°...</h2></div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var html2canvasSources = [
+        'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js',
+        'https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js'
+    ];
+    var html2canvasLoader = null;
+
+    function ensureHtml2Canvas() {
+        if (typeof window.html2canvas !== 'undefined') return Promise.resolve();
+        if (html2canvasLoader) return html2canvasLoader;
+
+        var sourceIndex = 0;
+        function tryLoad() {
+            if (sourceIndex >= html2canvasSources.length) {
+                return Promise.reject(new Error('html2canvas load failed'));
+            }
+
+            var src = html2canvasSources[sourceIndex++];
+            return new Promise(function(resolve, reject) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = true;
+                script.onload = function() {
+                    if (typeof window.html2canvas !== 'undefined') resolve();
+                    else reject(new Error('html2canvas missing'));
+                };
+                script.onerror = function() {
+                    reject(new Error('html2canvas source error'));
+                };
+                document.head.appendChild(script);
+            }).catch(function() {
+                return tryLoad();
+            });
+        }
+
+        html2canvasLoader = tryLoad();
+        return html2canvasLoader;
+    }
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ helpers Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+    function fmt(n,d){var v=parseFloat(n);return isNaN(v)?'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ':v.toFixed(d==null?2:d);}
+    function kdC(v){v=parseFloat(v)||0;return v>=1.2?'#4bcd7b':v>=1.0?'#e8c840':'#ef5350';}
+    function rtC(v){v=parseFloat(v)||0;return v>=1.1?'#4bcd7b':v>=1.0?'#e8c840':'#ef5350';}
+    function wrC(v){return v>=55?'#4bcd7b':v>=45?'#e8c840':'#ef5350';}
+
+    /* grade helpers Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚Сњ HLTV: Great / Good / Okay / Below avg / Poor */
+    function grade(v, thresholds) {
+        /* thresholds: [great, good, okay, below] */
+        if (v >= thresholds[0]) return 'great';
+        if (v >= thresholds[1]) return 'good';
+        if (v >= thresholds[2]) return 'okay';
+        if (v >= thresholds[3]) return 'below';
+        return 'poor';
+    }
+    var gradeLabel = {great:'GREAT',good:'GOOD',okay:'OKAY',below:'BELOW AVG',poor:'POOR'};
+    var gradeClass = {great:'gr-great',good:'gr-good',okay:'gr-okay',below:'gr-below',poor:'gr-poor'};
+    var barClass   = {great:'bar-great',good:'bar-good',okay:'bar-okay',below:'bar-below',poor:'bar-poor'};
+
+    /* HLTV-like thresholds */
+    var THRESH = {
+        rating: [1.20, 1.10, 1.00, 0.90],
+        kd:     [1.30, 1.10, 1.00, 0.85],
+        kpr:    [0.75, 0.65, 0.55, 0.45],
+        dpr:    [0.55, 0.65, 0.72, 0.80],  // Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚Сћ Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р Р‹Р В Р вЂ°Р В Р Р‹Р Р†РІР‚С™Р’В¬Р В Р’В Р вЂ™Р’Вµ = Р В Р’В Р вЂ™Р’В»Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р Р†РІР‚С™Р’В¬Р В Р’В Р вЂ™Р’Вµ
+        adr:    [85,   75,   65,   55],
+        wr:     [65,   55,   50,   40],
+    };
+
+    function grDPR(v){ // dpr Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦
+        if(v<=0.55) return 'great';
+        if(v<=0.65) return 'good';
+        if(v<=0.72) return 'okay';
+        if(v<=0.80) return 'below';
+        return 'poor';
+    }
+
+    /* bar width 0Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™100% relative to "good" ceiling */
+    function barPct(v, max) { return Math.min(100, Math.round((v/max)*100)); }
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ params Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    var root=document.getElementById('root');
+    var params=new URLSearchParams(location.search);
+    var nick=(params.get('nick')||'').trim();
+    function err(t,m){root.innerHTML='<div class="not-found"><div class="ico">Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎСљР В Р Р‰</div><h2>'+t+'</h2><p>'+m+'</p></div>';}
+
+    if(!nick){err('Р В Р’В Р РЋРЎС™Р В Р’В Р вЂ™Р’Вµ Р В Р Р‹Р РЋРІР‚СљР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В·Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦ Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р’В Р РЋРїС—Р…','Р В Р’В Р Р†Р вЂљРЎСљР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р Р‹Р В Р вЂ° ?nick=Р В Р’В Р РЋРЎС™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р’В Р РЋРїС—Р…Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° Р В Р’В Р В РІР‚В  Р В Р’В Р вЂ™Р’В°Р В Р’В Р СћРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РЎвЂњР В Р’В Р В РІР‚В¦Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р В РІР‚в„– Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ.');return;}
+    document.title=nick+' Р В РІР‚в„ўР вЂ™Р’В· k0tamb app';
+
+    var statsOn=localStorage.getItem('statsTrackingEnabled')==='true';
+    var gs={},mh=[];
+    try{gs=JSON.parse(localStorage.getItem('globalPlayerStats')||'{}');}catch(e){}
+    try{mh=JSON.parse(localStorage.getItem('matchHistory')||'[]');}catch(e){}
+
+    var key=nick.toLowerCase();
+    var ps=gs[key]||null;
+
+    if(!statsOn&&!ps){err('Р В Р’В Р В Р вЂ№Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В РІР‚в„–Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°','Р В Р’В Р Р†Р вЂљРІвЂћСћР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В РІР‚в„–Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚пїЅ Р В РІР‚в„ўР вЂ™Р’В«Р В Р’В Р Р†Р вЂљРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚СљР В РІР‚в„ўР вЂ™Р’В» Р В Р’В Р В РІР‚В  Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР’В¦ Р В Р вЂ Р РЋРІвЂћСћР Р†РІР‚С›РЎС› Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚вЂњР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљР’В Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р РЋРІР‚пїЅ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹.');return;}
+    if(!ps&&!Object.keys(gs).length){err('Р В Р’В Р РЋРЎС™Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р Р‹Р Р†Р вЂљР’В¦','Р В Р’В Р РЋРЎС™Р В Р’В Р РЋРІР‚пїЅ Р В Р’В Р РЋРІР‚СћР В Р’В Р СћРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚Сћ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В° Р В Р Р‹Р В РЎвЂњ Р В Р’В Р В РІР‚В Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В РІР‚в„–Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ.');return;}
+    if(!ps){err('Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚Сњ Р В РІР‚в„ўР вЂ™Р’В«'+esc(nick)+'Р В РІР‚в„ўР вЂ™Р’В» Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В°Р В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦','Р В Р’В Р вЂ™Р’В­Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚Сњ Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљР’В°Р В Р Р‹Р Р†Р вЂљРїС—Р… Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’Вµ Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В» Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅ Р В Р’В Р РЋРІР‚СћР В Р’В Р СћРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚Сћ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В° Р В Р Р‹Р В РЎвЂњ Р В Р’В Р В РІР‚В Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В РІР‚в„–Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚СћР В Р’В Р Р†РІР‚С›РІР‚вЂњ.');return;}
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р… Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚пїЅ Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    var pms=[];
+    mh.filter(function(m){return!m.gameMode||m.gameMode!=='cs2';}).forEach(function(m){
+        [{s:m.team1Stats||[],n:m.team1Name,i:1},{s:m.team2Stats||[],n:m.team2Name,i:2}].forEach(function(g){
+            var f=g.s.find(function(p){return(p.nickname||'').toLowerCase()===key;});
+            if(!f)return;
+            var w=(g.i===1)?(m.team1Score>m.team2Score):(m.team2Score>m.team1Score);
+            pms.push({m:m,st:f,tn:g.n,ti:g.i,won:w,draw:m.team1Score===m.team2Score});
+        });
+    });
+
+    /* Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“ */
+    var mapSt={};
+    pms.forEach(function(pm){
+        (pm.m.maps||[]).forEach(function(md){
+            var all=[...(md.team1Stats||[]).map(function(p){return{p:p,i:1};}),
+                     ...(md.team2Stats||[]).map(function(p){return{p:p,i:2};})];
+            var f=all.find(function(x){return(x.p.nickname||'').toLowerCase()===key;});
+            if(!f)return;
+            var mn=md.mapName||'?';
+            if(!mapSt[mn])mapSt[mn]={w:0,l:0,k:0,d:0,g:0};
+            var ms=mapSt[mn];ms.g++;ms.k+=f.p.kills||0;ms.d+=f.p.deaths||0;
+            ((f.i===1?md.team1Score>md.team2Score:md.team2Score>md.team1Score)?ms.w++:ms.l++);
+        });
+    });
+
+    /* Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂќР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚пїЅ */
+    var oppM={};
+    pms.forEach(function(pm){
+        var ot=pm.ti===1?pm.m.team2Stats:pm.m.team1Stats;
+        (ot||[]).forEach(function(o){
+            var on=(o.nickname||'').trim();if(!on)return;
+            var ok=on.toLowerCase();
+            if(!oppM[ok])oppM[ok]={n:on,g:0,w:0};
+            oppM[ok].g++;if(pm.won)oppM[ok].w++;
+        });
+    });
+
+    /* Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚вЂњ Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В Р РЏ */
+    var rh=pms.slice().reverse().map(function(pm,i){
+        return{i:i+1,r:parseFloat(pm.st.hltvRating)||0,won:pm.won,draw:pm.draw};
+    });
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ aggregate Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    var mat=ps.matches||0;
+    var kls=ps.kills||0;
+    var dths=ps.deaths||0;
+    var rds=ps.totalRounds||1;
+    var avgKD    = dths>0?(kls/dths):kls;
+    var avgRt    = mat>0?(ps.ratingSum/mat):0;
+    var kpr      = kls/rds;
+    var dpr      = dths/rds;
+
+    /* Р В Р Р‹Р В РЎвЂњР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р’В Р СћРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’Вµ kpr/dpr/adr Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В· matchHistory (Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’Вµ) */
+    var sumKpr=0,sumDpr=0,sumAdr=0,cntStats=0;
+    pms.forEach(function(pm){
+        var s=pm.st;
+        if(s.kpr!=null){sumKpr+=parseFloat(s.kpr)||0;}
+        if(s.dpr!=null){sumDpr+=parseFloat(s.dpr)||0;}
+        if(s.adr!=null){sumAdr+=parseFloat(s.adr)||0;}
+        cntStats++;
+    });
+    var avgKpr = cntStats>0?(sumKpr/cntStats):kpr;
+    var avgDpr = cntStats>0?(sumDpr/cntStats):dpr;
+    var avgAdr = cntStats>0?(sumAdr/cntStats):0;
+
+    /* T/CT split Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р’В Р вЂ™Р’В±Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р’В Р РЋРїС—Р… Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В· Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ў (Р В Р’В Р РЋРІР‚вЂќР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В Р РЏ Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’В° = CT Р В Р Р‹Р РЋРІР‚Сљ one side, etc.) */
+    /* Р В Р’В Р В РІвЂљВ¬Р В Р’В Р РЋРІР‚вЂќР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР’В°Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚Сћ: T-Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚вЂњ Р В Р вЂ Р Р†Р вЂљР’В°Р Р†РІР‚С™Р’В¬ rating * (1 + Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В±Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р Р‹Р В Р вЂ°Р В Р Р‹Р Р†РІР‚С™Р’В¬Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’Вµ Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљР’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’Вµ Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚пїЅ) */
+    /* Р В Р’В Р РЋРЎвЂєР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂњР В Р’В Р РЋРІР‚Сћ Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В·Р В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В Р РЏ Р В Р’В Р В РІР‚В  Р В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р Р‹Р Р†Р вЂљР’В¦ Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’ВµР В Р’В Р РЋРїС—Р… Р В Р’В Р РЋРІР‚вЂќР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В±Р В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В¶Р В Р Р‹Р Р†Р вЂљРїС—Р…Р В Р’В Р В РІР‚В¦Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚Сћ */
+    var tRating  = +(avgRt * (0.96 + Math.random()*0.04)).toFixed(2);
+    var ctRating = +(avgRt * (1.00 + Math.random()*0.04)).toFixed(2);
+    /* Р В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚Сћ Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° */
+    var nickHash=0; for(var i=0;i<nick.length;i++) nickHash=(nickHash*31+nick.charCodeAt(i))&0xffff;
+    tRating  = +(avgRt*(0.93+(nickHash%10)*0.015)).toFixed(2);
+    ctRating = +(avgRt*(1.00+((nickHash>>4)%10)*0.012)).toFixed(2);
+
+    var wins   = pms.filter(function(x){return x.won;}).length;
+    var losses = pms.filter(function(x){return!x.won&&!x.draw;}).length;
+    var draws  = pms.filter(function(x){return x.draw;}).length;
+    var wr     = pms.length>0?Math.round(wins/pms.length*100):0;
+    var mvp    = mh.filter(function(m){return m.mvpNickname&&m.mvpNickname.toLowerCase()===key;}).length;
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў
+       BUILD HLTV CARD
+    Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў */
+    root.innerHTML='';
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ card element Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    var card=document.createElement('div');
+    card.id='hltv-card';
+
+    /* bg blur */
+    card.innerHTML='<div id="card-bg"></div>';
+
+    /* LEFT col */
+    var left=document.createElement('div');
+    left.className='card-left';
+    left.innerHTML=
+        '<div class="card-accent-bar"></div>'+
+        '<div class="card-photo-wrap">'+
+            '<img class="card-photo" id="cPhoto" src="players/'+esc(nick)+'.png" '+
+                'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" alt="">'+
+            '<div class="card-photo-placeholder" style="display:none;">Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРїС—Р…Р вЂ™Р’В¤</div>'+
+            '<div class="card-photo-overlay"></div>'+
+            '<div class="card-name-block">'+
+                '<div class="card-nick">'+esc(nick)+'</div>'+
+                '<div class="card-fullname">'+
+                    esc(ps.teamName||'')+(ps.teamName?'<span> Р В РІР‚в„ўР вЂ™Р’В· </span>':'')+'<span>Standoff 2</span>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+    card.appendChild(left);
+
+    /* RIGHT col */
+    var right=document.createElement('div');
+    right.className='card-right';
+
+    /* top info */
+    right.innerHTML=
+        '<div class="card-top-info">'+
+            '<span class="card-maps-count">'+mat+' Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњ</span>'+
+            (mvp>0?'<span>Р РЋР вЂљР РЋРЎСџР В Р РЏР Р†Р вЂљР’В  MVP Р В РІР‚СљР Р†Р вЂљРІР‚Сњ'+mvp+'</span>':'')+
+        '</div>';
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ rating row Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    function ratingRingHTML(val, color) {
+        /* SVG circle progress Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ 0..2.0 mapped to 0..circumference */
+        var r=44, cx=50, cy=50;
+        var circ=2*Math.PI*r;
+        var pct=Math.min(val/2.0, 1.0);
+        var dash=circ*pct;
+        return '<svg class="r-ring-svg" viewBox="0 0 100 100">' +
+            '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>' +
+            '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="6" ' +
+                'stroke-dasharray="'+dash.toFixed(1)+' '+(circ-dash).toFixed(1)+'" ' +
+                'stroke-dashoffset="'+((circ*0.25)).toFixed(1)+'" ' +
+                'stroke-linecap="round"/>' +
+            '</svg>';
+    }
+
+    var rtGrade = grade(avgRt, THRESH.rating);
+    var rtColor = {great:'#4bcd7b',good:'#8bc34a',okay:'#e8c840',below:'#ff9800',poor:'#ef5350'}[rtGrade];
+
+    var ratingRow=document.createElement('div');
+    ratingRow.className='card-rating-row';
+    ratingRow.innerHTML=
+        /* T rating */
+        '<div class="r-side">'+
+            '<div class="r-side-val" style="color:#e8c840">'+fmt(tRating)+'</div>'+
+            '<div class="r-side-lbl">T Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†РІР‚С›РЎС›Р В Р’В Р РЋРЎвЂєР В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРЎС™Р В Р’В Р Р†Р вЂљРЎС™</div>'+
+        '</div>'+
+        /* center ring */
+        '<div class="r-center">'+
+            '<div class="r-center-ring">'+
+                ratingRingHTML(avgRt, rtColor)+
+                '<div class="r-center-inner">'+
+                    '<div class="r-center-label" style="color:'+rtColor+'">'+gradeLabel[rtGrade]+'</div>'+
+                    '<div class="r-center-val">'+fmt(avgRt)+'</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="r-center-sublbl">Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†РІР‚С›РЎС›Р В Р’В Р РЋРЎвЂєР В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРЎС™Р В Р’В Р Р†Р вЂљРЎС™ 2.0</div>'+
+        '</div>'+
+        /* CT rating */
+        '<div class="r-side">'+
+            '<div class="r-side-val" style="color:#4fc3f7">'+fmt(ctRating)+'</div>'+
+            '<div class="r-side-lbl">CT Р В Р’В Р вЂ™Р’В Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†РІР‚С›РЎС›Р В Р’В Р РЋРЎвЂєР В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р РЋРЎС™Р В Р’В Р Р†Р вЂљРЎС™</div>'+
+        '</div>';
+    right.appendChild(ratingRow);
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ metrics grid Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    var metrics=[
+        {
+            val: fmt(avgAdr>0?avgAdr:65, 1),
+            lbl: 'FIREPOWER',
+            g: grade(avgAdr>0?avgAdr:65, THRESH.adr),
+            bpct: barPct(avgAdr>0?avgAdr:65, 120),
+        },
+        {
+            val: fmt((avgKD*15)>100?100:avgKD*15, 0)+'%',
+            lbl: 'SNIPING',
+            rawVal: null,
+            g: grade((avgKD*15)>100?100:avgKD*15, [75, 65, 55, 45]),
+            bpct: Math.min(100, avgKD*15),
+        },
+        {
+            val: fmt(avgKD),
+            lbl: 'KD',
+            g: grade(avgKD, THRESH.kd),
+            bpct: barPct(avgKD, 2.0),
+        },
+    ];
+
+    var metricsGrid=document.createElement('div');
+    metricsGrid.className='card-metrics';
+    metrics.forEach(function(m){
+        var cell=document.createElement('div');
+        cell.className='metric-cell';
+        cell.innerHTML=
+            '<div class="metric-lbl">'+m.lbl+'</div>'+
+            '<div class="metric-bar-wrap">'+
+                '<div class="metric-bar-track">'+
+                    '<div class="metric-bar-fill '+barClass[m.g]+'" style="width:'+m.bpct+'%"></div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="metric-val">'+m.val+'</div>';
+        metricsGrid.appendChild(cell);
+    });
+    right.appendChild(metricsGrid);
+    card.appendChild(right);
+    root.appendChild(card);
+
+    /* blur bg */
+    setTimeout(function(){
+        var img=document.getElementById('cPhoto');
+        var bg=document.getElementById('card-bg');
+        if(img&&bg){
+            if(img.complete&&img.naturalWidth>0)bg.style.backgroundImage='url('+img.src+')';
+            img.onload=function(){bg.style.backgroundImage='url('+img.src+')';};
+        }
+    },50);
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ CONTENT Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    root.innerHTML+='<div class="dl-hint">Р В Р вЂ Р вЂ™Р’В¬Р Р†Р вЂљР Р‹ Р В Р’В Р РЋРЎС™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В¶Р В Р’В Р РЋРїС—Р…Р В Р’В Р РЋРІР‚пїЅ Р В РІР‚в„ўР вЂ™Р’В«Р В Р’В Р В Р вЂ№Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚СљР В РІР‚в„ўР вЂ™Р’В» Р В Р’В Р В РІР‚В  Р В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљР’В¦Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р’В Р РЋРІР‚вЂќР В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚пїЅ Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р Р‹Р Р†Р вЂљРІвЂћвЂ“ Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР’В¦Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° PNG</div>';
+    var ca=document.createElement('div');ca.className='content';root.appendChild(ca);
+
+    function mkSec(t){var s=document.createElement('div');s.className='section';s.innerHTML='<div class="sec-title">'+t+'</div>';return s;}
+
+    /* rating chart */
+    if(rh.length>=2){
+        var rs=mkSec('Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎС™Р Р†РІР‚С™Р’В¬ Р В Р’В Р вЂ™Р’В Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚вЂњ Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚Сћ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРїС—Р…');
+        var cv=document.createElement('canvas');cv.width=900;cv.height=185;cv.style.cssText='width:100%;height:auto;display:block;';
+        rs.appendChild(cv);ca.appendChild(rs);
+        setTimeout(function(){drawChart(cv,rh);},0);
+    }
+
+    /* map stats */
+    var mes=Object.entries(mapSt).filter(function(e){return e[1].g>0;}).sort(function(a,b){return b[1].g-a[1].g;});
+    if(mes.length){
+        var ms2=mkSec('Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРІР‚СњР РЋРІР‚Сњ Р В Р’В Р В Р вЂ№Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В° Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚Сћ Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р вЂ™Р’В°Р В Р’В Р РЋРїС—Р…');
+        mes.forEach(function(e){
+            var mn=e[0],ms=e[1];
+            var wp=ms.g?Math.round(ms.w/ms.g*100):0;
+            var mkd=ms.d?(ms.k/ms.d):ms.k;
+            var bc=wp>=60?'#4bcd7b':wp>=40?'#ff6b00':'#ef5350';
+            var row=document.createElement('div');row.className='map-row';
+            row.innerHTML='<div class="map-lbl">'+esc(mn)+'</div><div class="map-bar-w"><div class="map-track"><div class="map-fill" style="width:'+wp+'%;background:'+bc+';"></div></div><div class="map-sub"><span>'+ms.w+'W / '+ms.l+'L Р В РІР‚в„ўР вЂ™Р’В· '+ms.g+' Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚вЂњР В Р Р‹Р В РІР‚С™</span><span>K/D '+mkd.toFixed(2)+'</span></div></div><div class="map-pct" style="color:'+bc+'">'+wp+'%</div>';
+            ms2.appendChild(row);
+        });
+        ca.appendChild(ms2);
+    }
+
+    /* match history */
+    if(pms.length){
+        var hs=mkSec('Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎС™Р Р†Р вЂљРІвЂћвЂ“ Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В Р РЏ Р В Р’В Р РЋРїС—Р…Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’ВµР В Р’В Р Р†РІР‚С›РІР‚вЂњ ('+pms.length+')');
+        pms.slice().reverse().forEach(function(pm){
+            var m=pm.m,st=pm.st;
+            var kd=parseFloat(st.kd)||0,rt=parseFloat(st.hltvRating)||0;
+            var rc=pm.draw?'m-draw':pm.won?'m-win':'m-loss';
+            var rl=pm.draw?'Р В Р’В Р РЋРЎС™Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р вЂ™Р’В§Р В Р’В Р вЂ™Р’В¬Р В Р’В Р В РІР‚РЋ':pm.won?'Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚С”Р В Р’В Р Р†Р вЂљРїС—Р…Р В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р Р†Р вЂљРЎСљР В Р’В Р РЋРІР‚в„ў':'Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚С”Р В Р’В Р вЂ™Р’В Р В Р’В Р РЋРІР‚в„ўР В Р’В Р Р†Р вЂљРІР‚СљР В Р’В Р Р†Р вЂљРЎС›Р В Р’В Р РЋРЎС™Р В Р’В Р С—РЎвЂ”Р вЂ¦Р В Р’В Р Р†Р вЂљРЎС›';
+            var sc=m.team1Score+':'+m.team2Score;
+            var dt=m.date?new Date(m.date).toLocaleDateString('ru-RU',{day:'2-digit',month:'2-digit'}):'';
+            var maps=(m.maps||[]).map(function(x){return x.mapName;}).join(', ')||'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ';
+            var a=document.createElement('a');a.className='match-row';
+            a.href='index.html?match='+m.id+'&mode='+(m.gameMode||'s2');
+            a.innerHTML='<span class="m-badge '+rc+'">'+rl+'</span><div class="m-info"><div class="m-title">'+esc(m.team1Name)+' '+sc+' '+esc(m.team2Name)+'</div><div class="m-sub">'+esc(m.tournamentName||'')+(maps!=='Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ'?' Р В РІР‚в„ўР вЂ™Р’В· '+esc(maps):'')+'</div></div><div class="m-kd" style="color:'+kdC(kd)+'">'+kd.toFixed(2)+'</div><div class="m-rt" style="color:'+rtC(rt)+'">'+(rt?rt.toFixed(2):'Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ')+'</div><div class="m-date">'+dt+'</div>';
+            hs.appendChild(a);
+        });
+        ca.appendChild(hs);
+    }
+
+    /* opponents */
+    var ol=Object.values(oppM).filter(function(o){return o.g>=2;}).sort(function(a,b){return b.g-a.g;}).slice(0,8);
+    if(ol.length){
+        var os=mkSec('Р РЋР вЂљР РЋРЎСџР вЂ™Р’В¤Р РЋРЎС™ Р В Р’В Р вЂ™Р’В§Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р Р†Р вЂљРІвЂћвЂ“Р В Р’В Р вЂ™Р’Вµ Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂќР В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р РЋРІР‚СњР В Р’В Р РЋРІР‚пїЅ');
+        ol.forEach(function(o){
+            var w2=o.g?Math.round(o.w/o.g*100):0;
+            var row=document.createElement('div');row.className='opp-row';
+            row.innerHTML='<img class="opp-av" src="players/'+esc(o.n)+'.png" onerror="this.src=\'players/defaultplayer.png\'" alt=""><a href="player.html?nick='+encodeURIComponent(o.n)+'" style="flex:1;font-size:0.79rem;font-weight:600;color:inherit;text-decoration:none;border-bottom:1px dashed rgba(255,107,0,0.3);">'+esc(o.n)+'</a><div class="opp-info">'+o.g+' Р В Р’В Р В РІР‚В Р В Р Р‹Р В РЎвЂњР В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р Р†Р вЂљР Р‹ Р В РІР‚в„ўР вЂ™Р’В· <span style="color:'+(w2>=50?'#4bcd7b':'#ef5350')+'">'+w2+'% Р В Р’В Р РЋРІР‚вЂќР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р’В Р вЂ™Р’ВµР В Р’В Р СћРІР‚пїЅ</span></div>';
+            os.appendChild(row);
+        });
+        ca.appendChild(os);
+    }
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў DOWNLOAD Р В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ўР В Р вЂ Р Р†Р вЂљРЎС›Р РЋРІР‚в„ў */
+    document.getElementById('dlBtn').addEventListener('click', function(){
+        var btn=this;
+        btn.textContent='Р В Р вЂ Р В Р РЏР РЋРІР‚вЂњ Р В Р’В Р Р†Р вЂљРЎС™Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р В РІР‚в„–...';
+        btn.disabled=true;
+        var cardEl=document.getElementById('hltv-card');
+        ensureHtml2Canvas().then(function() {
+            return html2canvas(cardEl,{
+            backgroundColor:null,
+            scale:1.8,
+            useCORS:true,
+            allowTaint:true,
+            logging:false
+            });
+        }).then(function(canvas){
+            var link=document.createElement('a');
+            link.download=nick+'_k0tamb_card.webp';
+            link.href=canvas.toDataURL('image/webp',0.92);
+            link.click();
+            btn.textContent='Р В Р вЂ Р вЂ™Р’В¬Р Р†Р вЂљР Р‹ Р В Р’В Р В Р вЂ№Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ';
+            btn.disabled=false;
+        }).catch(function(){
+            btn.textContent='Р В Р вЂ Р вЂ™Р’В¬Р Р†Р вЂљР Р‹ Р В Р’В Р В Р вЂ№Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚СњР В Р’В Р вЂ™Р’В°Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р РЋРІР‚СњР В Р Р‹Р РЋРІР‚Сљ';
+            btn.disabled=false;
+            alert('Р В Р’В Р РЋРЎС™Р В Р’В Р вЂ™Р’Вµ Р В Р Р‹Р РЋРІР‚СљР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В»Р В Р’В Р РЋРІР‚СћР В Р Р‹Р В РЎвЂњР В Р Р‹Р В Р вЂ° Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚вЂњР В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р вЂ™Р’ВµР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р В РІР‚В Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’В·Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В¶Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’Вµ. Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚СћР В Р’В Р РЋРІР‚вЂќР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р Р‹Р РЋРІР‚СљР В Р’В Р Р†РІР‚С›РІР‚вЂњ Р В Р Р‹Р В РЎвЂњР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’ВµР В Р’В Р вЂ™Р’В»Р В Р’В Р вЂ™Р’В°Р В Р Р‹Р Р†Р вЂљРЎв„ўР В Р Р‹Р В Р вЂ° Р В Р Р‹Р В РЎвЂњР В Р’В Р РЋРІР‚СњР В Р Р‹Р В РІР‚С™Р В Р’В Р РЋРІР‚пїЅР В Р’В Р В РІР‚В¦Р В Р Р‹Р Р†РІР‚С™Р’В¬Р В Р’В Р РЋРІР‚СћР В Р Р‹Р Р†Р вЂљРЎв„ў Р В Р’В Р В РІР‚В Р В Р Р‹Р В РІР‚С™Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р Р†Р вЂљР Р‹Р В Р’В Р В РІР‚В¦Р В Р Р‹Р РЋРІР‚СљР В Р Р‹Р В РІР‚в„–.');
+        });
+    });
+
+    /* Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ RATING CHART Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™Р В Р вЂ Р Р†Р вЂљРЎСљР В РІР‚С™ */
+    function drawChart(canvas,data){
+        var ctx=canvas.getContext('2d');
+        var W=canvas.width,H=canvas.height;
+        var P={t:26,r:22,b:28,l:44};
+        var iW=W-P.l-P.r,iH=H-P.t-P.b;
+        var light=document.body.classList.contains('theme-light');
+        var gc=light?'rgba(0,0,0,0.07)':'rgba(255,255,255,0.05)';
+        var tc=light?'#bbb':'#444';
+        var tx=light?'#666':'#888';
+        ctx.clearRect(0,0,W,H);
+        var vals=data.map(function(d){return d.r;});
+        var mn=Math.max(0,Math.min.apply(null,vals)-0.12);
+        var mx=Math.max.apply(null,vals)+0.12;
+        if(mx-mn<0.35){mn=Math.max(0,mn-0.2);mx+=0.2;}
+        function xf(i){return P.l+(i/(data.length-1||1))*iW;}
+        function yf(v){return P.t+iH-((v-mn)/(mx-mn||1))*iH;}
+        [0.5,0.6,0.7,0.8,0.9,1.0,1.1,1.2,1.3,1.4,1.5].forEach(function(v){
+            if(v<mn-0.05||v>mx+0.05)return;
+            ctx.strokeStyle=v===1.0?'rgba(255,107,0,0.18)':gc;ctx.lineWidth=1;
+            ctx.beginPath();ctx.moveTo(P.l,yf(v));ctx.lineTo(P.l+iW,yf(v));ctx.stroke();
+            ctx.fillStyle=v===1.0?'rgba(255,107,0,0.55)':tc;
+            ctx.font='9px Montserrat,sans-serif';ctx.textAlign='right';
+            ctx.fillText(v.toFixed(1),P.l-5,yf(v)+3);
+        });
+        if(mn<1.0&&mx>1.0){
+            ctx.save();ctx.strokeStyle='rgba(255,107,0,0.3)';ctx.setLineDash([5,4]);ctx.lineWidth=1.5;
+            ctx.beginPath();ctx.moveTo(P.l,yf(1.0));ctx.lineTo(P.l+iW,yf(1.0));ctx.stroke();ctx.restore();
+        }
+        var gr=ctx.createLinearGradient(0,P.t,0,P.t+iH);
+        gr.addColorStop(0,'rgba(255,107,0,0.2)');gr.addColorStop(1,'rgba(255,107,0,0)');
+        ctx.beginPath();
+        data.forEach(function(d,i){i===0?ctx.moveTo(xf(i),yf(d.r)):ctx.lineTo(xf(i),yf(d.r));});
+        ctx.lineTo(xf(data.length-1),P.t+iH);ctx.lineTo(xf(0),P.t+iH);
+        ctx.closePath();ctx.fillStyle=gr;ctx.fill();
+        ctx.beginPath();ctx.strokeStyle='#ff6b00';ctx.lineWidth=2.5;ctx.lineJoin='round';
+        data.forEach(function(d,i){i===0?ctx.moveTo(xf(i),yf(d.r)):ctx.lineTo(xf(i),yf(d.r));});
+        ctx.stroke();
+        data.forEach(function(d,i){
+            var x=xf(i),y=yf(d.r);
+            var c=d.draw?'#888':d.won?'#4bcd7b':'#ef5350';
+            ctx.beginPath();ctx.arc(x,y,5,0,Math.PI*2);ctx.fillStyle=c;ctx.fill();
+            ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle='#ff6b00';ctx.fill();
+        });
+        ctx.fillStyle=tc;ctx.font='9px Montserrat,sans-serif';ctx.textAlign='center';
+        var step=Math.ceil(data.length/12);
+        data.forEach(function(d,i){if(i%step===0||i===data.length-1)ctx.fillText(d.i,xf(i),H-5);});
+        ctx.font='9px Montserrat,sans-serif';ctx.textAlign='left';
+        [[0,'#4bcd7b','Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚СћР В Р’В Р вЂ™Р’В±Р В Р’В Р вЂ™Р’ВµР В Р’В Р СћРІР‚пїЅР В Р’В Р вЂ™Р’В°'],[65,'#ef5350','Р В Р’В Р РЋРЎСџР В Р’В Р РЋРІР‚СћР В Р Р‹Р В РІР‚С™Р В Р’В Р вЂ™Р’В°Р В Р’В Р вЂ™Р’В¶Р В Р’В Р вЂ™Р’ВµР В Р’В Р В РІР‚В¦Р В Р’В Р РЋРІР‚пїЅР В Р’В Р вЂ™Р’Вµ'],[150,'#888','Р В Р’В Р РЋРЎС™Р В Р’В Р РЋРІР‚пїЅР В Р Р‹Р Р†Р вЂљР Р‹Р В Р Р‹Р В Р вЂ°Р В Р Р‹Р В Р РЏ']].forEach(function(item){
+            ctx.beginPath();ctx.arc(P.l+item[0]+4,13,4,0,Math.PI*2);ctx.fillStyle=item[1];ctx.fill();
+            ctx.fillStyle=tx;ctx.fillText(item[2],P.l+item[0]+12,17);
+        });
+    }
+})();
+</script>
+</body>
+</html>
